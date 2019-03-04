@@ -1,7 +1,10 @@
 import { Menu } from './menu';
 
 export const HEROS : Menu[] = [
-    {id: 11, name: 'sono'},
-    {id: 12, name: 'ato'},
-    {id: 13, name: 'これ'}
+    {id: 0, name: 'TOP'},
+    {id: 1, name: 'PROFILE'},
+    {id: 2, name: 'LANGUAGES'},
+    {id: 3, name: 'TOOLS'},
+    {id: 4, name: 'WORKS'},
+    {id: 5, name: 'CONTACTS'}
 ]
