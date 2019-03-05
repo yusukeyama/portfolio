@@ -29,7 +29,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": ["src/js/canvas.js"],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -86,7 +86,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": ["src/js/canvas.js"],
             "assets": [
               "src/favicon.ico",
               "src/assets"
