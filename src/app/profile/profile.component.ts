@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Menu } from '../menu';
-import { HeapProfiler } from 'inspector';
 
 @Component({
   selector: 'app-profile',
