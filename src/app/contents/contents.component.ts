@@ -1,4 +1,4 @@
-import { HEROS } from '../mock-contents';
+import { ContentsService } from '../contents.service';
 import { Component, OnInit } from '@angular/core';
 import { Menu } from '../menu'; 
 
@@ -9,12 +9,13 @@ import { Menu } from '../menu';
 })
 
 export class ContentsComponent implements OnInit {
-  constructor() { }
+  constructor(private contentsService: ContentsService) { }
 
   ngOnInit() {
+    this.getHeroes();
   }
 
-  heroes = HEROS;
+  heroes: Menu[];
   selectedHero: Menu;
 
   hero: Menu = {
@@ -24,5 +25,9 @@ export class ContentsComponent implements OnInit {
 
   onSelect(hero: Menu): void {
     this.selectedHero = hero;
+  }
+
+  getHeroes(): void {
+    this.heroes = this.contentsService.getHeroes();
   }
 }
