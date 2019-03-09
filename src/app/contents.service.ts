@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 import { Menu } from './menu';
 import { HEROS } from './mock-contents';
@@ -10,7 +11,7 @@ export class ContentsService {
 
   constructor() { }
 
-  getHeroes(): Menu[] {
-    return HEROS;
+  getHeroes(): Observable<Menu[]> {
+    return of (HEROS);
   }
 }

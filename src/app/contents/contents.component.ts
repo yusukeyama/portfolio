@@ -28,6 +28,7 @@ export class ContentsComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroes = this.contentsService.getHeroes();
+    this.contentsService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
   }
 }
