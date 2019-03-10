@@ -6,7 +6,12 @@
   <h2>
     {{ sub_title }}
   </h2>
-  <app-contents></app-contents>
+  <nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/contents">Contents</a>
+  </nav>
+  <router-outlet></router-outlet>
+  <app-messages></app-messages>
 </div>
 
 <router-outlet></router-outlet>

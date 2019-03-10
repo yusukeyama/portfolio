@@ -11,20 +11,10 @@ import { Menu } from '../menu';
 export class ContentsComponent implements OnInit {
   constructor(private contentsService: ContentsService) { }
 
+  heroes: Menu[];
+
   ngOnInit() {
     this.getHeroes();
-  }
-
-  heroes: Menu[];
-  selectedHero: Menu;
-
-  hero: Menu = {
-    id: 1,
-    name: 'wind'
-  }
-
-  onSelect(hero: Menu): void {
-    this.selectedHero = hero;
   }
 
   getHeroes(): void {

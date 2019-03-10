@@ -1,6 +1,6 @@
 import { Menu } from './menu';
 
-export const HEROS : Menu[] = [
+export const HEROES : Menu[] = [
     {id: 0, name: 'TOP'},
     {id: 1, name: 'PROFILE'},
     {id: 2, name: 'LANGUAGES'},
