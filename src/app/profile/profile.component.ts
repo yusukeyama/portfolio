@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Menu } from '../menu';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -9,7 +9,7 @@ import { ContentsService } from '../contents.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, OnChanges {
   hero: Menu;
 
   constructor(
@@ -19,10 +19,14 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getHero();
+    this.getContents();
   }
 
-  getHero(): void {
+  ngOnChanges(): void {
+    this.getContents();
+  }
+
+  getContents(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.contentsService.getHero(id)
       .subscribe(hero => this.hero = hero);

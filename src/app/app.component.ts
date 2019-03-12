@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ColorfulPalette';
-  sub_title = 'yusuke yamanishi portfolio web';
+  title = 'COLORFULPALETTE';
+  sub_title = 'YUSUKE.Y PORTFORIO';
 }
