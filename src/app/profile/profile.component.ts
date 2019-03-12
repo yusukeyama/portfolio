@@ -9,7 +9,7 @@ import { ContentsService } from '../contents.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit, OnChanges {
+export class ProfileComponent implements OnInit {
   hero: Menu;
 
   constructor(
@@ -19,16 +19,14 @@ export class ProfileComponent implements OnInit, OnChanges {
   ) { }
 
   ngOnInit(): void {
-    this.getContents();
-  }
-
-  ngOnChanges(): void {
-    this.getContents();
+    this.route.paramMap.subscribe(paramsMap => {
+      this.getContents();
+    })
   }
 
   getContents(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.contentsService.getHero(id)
+    this.contentsService.getMenu(id)
       .subscribe(hero => this.hero = hero);
   }
 

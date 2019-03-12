@@ -7,7 +7,7 @@ import { ContentsComponent } from './contents/contents.component';
 
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
-import { MessagesComponent } from './messages/messages.component';
+import { TopComponent } from './top/top.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     ContentsComponent,
     ProfileComponent,
-    MessagesComponent,
+    TopComponent,
     DashboardComponent
   ],
   imports: [

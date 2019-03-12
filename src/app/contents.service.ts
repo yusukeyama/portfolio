@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 
 import { Menu } from './menu';
-import { HEROES } from './mock-contents';
+import { MENUS } from './mock-contents';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +12,13 @@ export class ContentsService {
 
   constructor(private messageService: MessageService) { }
 
-  getHeroes(): Observable<Menu[]> {
-    this.messageService.add('HeroService: fetched heroes');
-    return of (HEROES);
+  getMenus(): Observable<Menu[]> {
+    this.messageService.add('HeroService: fetched menus');
+    return of (MENUS);
   }
 
-  getHero(id: number): Observable<Menu> {
-    this.messageService.add('HeroService: fetched hero id=${id}');
-    return of (HEROES.find(hero => hero.id === id));
+  getMenu(id: number): Observable<Menu> {
+    this.messageService.add('HeroService: fetched menu id=${id}');
+    return of (MENUS.find(menu => menu.id === id));
   }
 }

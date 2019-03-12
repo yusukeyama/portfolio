@@ -8,16 +8,16 @@ import { ContentsService } from '../contents.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  heroes: Menu[] = [];
+  menus: Menu[] = [];
 
   constructor(private contentsService: ContentsService) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getMenus();
   }
 
-  getHeroes(): void {
-    this.contentsService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(0, 6));
+  getMenus(): void {
+    this.contentsService.getMenus()
+      .subscribe(menus => this.menus = menus.slice(0, 6));
   }
 }

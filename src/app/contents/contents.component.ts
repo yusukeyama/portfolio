@@ -11,14 +11,14 @@ import { Menu } from '../menu';
 export class ContentsComponent implements OnInit {
   constructor(private contentsService: ContentsService) { }
 
-  heroes: Menu[];
+  menus: Menu[];
 
   ngOnInit() {
     this.getHeroes();
   }
 
   getHeroes(): void {
-    this.contentsService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+    this.contentsService.getMenus()
+      .subscribe(menus => this.menus = menus);
   }
 }

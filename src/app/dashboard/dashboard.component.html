@@ -1,8 +1,13 @@
 <div class="grid grid-pad center">
-  <a *ngFor="let hero of heroes" class="col-1-4 center"
-    routerLink="/detail/{{hero.id}}">
+  <a class="col-1-4 center" routerLink="/">
     <div class="module hero">
-      <h4>{{ hero.name }}</h4>
+        <h4>TOP</h4>
+    </div>
+  </a>
+  <a *ngFor="let menu of menus" class="col-1-4 center"
+    routerLink="/detail/{{menu.id}}">
+    <div class="module hero">
+      <h4>{{ menu.name }}</h4>
     </div>
   </a>
 </div>
