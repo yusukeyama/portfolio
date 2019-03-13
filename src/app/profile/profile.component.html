@@ -1,10 +1,11 @@
-<div *ngIf="hero">
+<div *ngIf="contents">
 
-    <h2>{{ hero.name | uppercase }} Details</h2>
-      <div><span>id: </span>{{ hero.id }}</div>
+    <h2>{{ title }}</h2>
     <div>
       <label>name:
-        <input [(ngModel)] = "hero.name" placeholder = "name">
+        <div *ngFor="let content of contents">
+          <div>{{ content.body }}</div>
+        </div>
       </label>
     </div>
   

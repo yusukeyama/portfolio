@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { Menu } from '../menu';
+import { Content } from '../menu';
+import { MENUS } from '../mock-contents';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ContentsService } from '../contents.service';
@@ -10,7 +11,8 @@ import { ContentsService } from '../contents.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  hero: Menu;
+  contents: Content[];
+  title: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,8 +28,9 @@ export class ProfileComponent implements OnInit {
 
   getContents(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.contentsService.getMenu(id)
-      .subscribe(hero => this.hero = hero);
+    this.title = MENUS.find(menu => menu.id === id).name;
+    this.contentsService.getContents(id)
+      .subscribe(content => this.contents = content);
   }
 
   goBack(): void {

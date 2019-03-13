@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, from } from 'rxjs';
 import { MessageService } from './message.service';
 
-import { Menu } from './menu';
-import { MENUS } from './mock-contents';
-import { PROFILE } from './mock-contents';
+import { Menu, Content } from './menu';
+import { MENUS, PROFILE, LANGUAGES, TOOLS, WORKS } from './mock-contents';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +17,18 @@ export class ContentsService {
     return of (MENUS);
   }
 
-  getMenu(id: number): Observable<Menu> {
-    this.messageService.add('ContentsService: fetched menu id=${id}');
-    return of (MENUS.find(menu => menu.id === id));
+  getContents(id: number): Observable<Content[]> {
+    switch (id) {
+      case 1:
+        return of (LANGUAGES);
+        break;
+      case 2:
+        return of (TOOLS);
+        break;
+      case 3:
+        return of (WORKS);
+        break;
+    }
+    //return of (MENUS.find(menu => menu.id === id));
   }
 }
