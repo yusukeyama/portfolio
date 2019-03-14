@@ -1,13 +1,15 @@
 <div *ngIf="contents">
 
-    <h2>{{ title }}</h2>
-    <div>
-      <label>name:
-        <div *ngFor="let content of contents">
-          <div>{{ content.body }}</div>
+  <h2 class="title">{{ title }}</h2>
+  <div class="container">
+    <div class="row">
+        <div *ngFor="let content of contents" class="col-xl-8 box-container background">
+            <h2 class="box-header">{{ content.title }}</h2>
+            <p class="box-body">{{ content.body }}</p>
+            <p>{{ content.footer }}</p>
         </div>
-      </label>
     </div>
+  </div>
   
 </div>
-<button (click)="goBack()">戻る</button>
+<!-- <button (click)="goBack()">戻る</button> -->
