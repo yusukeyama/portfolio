@@ -24,9 +24,13 @@ export const LANGUAGES: Content[] = [
 ]
 
 export const TOOLS: Content[] = [
-
+    { id: 0, title: 'Git', body:'エンジニアになりたての頃から使用。最初は何度もコンフリクト起こりまくったけど今は完璧に使えるように。rebase愛好者。', footer:''},
+    { id: 1, title: 'PhpStorm', body:'PHPの開発で使い始めたら使いやすくて虜に。とにかく静的解析が優秀すぎてどんどんコード書ける。AndroidStudioとUIが似ていて親しみやすいのもグッド。', footer:''},
+    { id: 2, title: 'VisualStudioCode', body:'愛用のエディタ。PhpStorm使うようになってからは出番は減ったけど相変わらず軽くて使いやすい。1年くらい愛用している。拡張機能追加でどんな状況にも対応できる。', footer:''},
+    { id: 3, title: 'Mac', body:'会社がMac使ってて使うことに。環境構築とかunix系であることとかが便利すぎてプライベートでもMac使いに。', footer:''},
 ]
 
 export const WORKS: Content[] = [
-
+    {id: 0, title: 'ポートフォリオページ', body:'このWebサイト。自分のスキルとか棚卸しするためと今まで学んだWeb技術で作りたくて作成。随時情報は追加予定。＊Workにはプライベートで関わったもののみ掲載していきます。', footer:''},
+    {id: 1, title: 'シンプルメモ', body: 'Android個人リリース第1弾。とにかく軽く何かをリリースしたくて作成。そこそこインストール数伸びてて意外な収穫があった。', footer:''}
 ]

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { Content } from '../menu';
 import { MENUS } from '../mock-contents';
 import { ActivatedRoute } from '@angular/router';
@@ -11,6 +11,8 @@ import { ContentsService } from '../contents.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  @Output() changeComponent = new EventEmitter<boolean>();
+  private component_state: boolean;
   contents: Content[];
   title: string;
 
@@ -30,10 +32,18 @@ export class ProfileComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.title = MENUS.find(menu => menu.id === id).name;
     this.contentsService.getContents(id)
-      .subscribe(content => this.contents = content);
+      .subscribe(content => {
+        this.contents = content;
+        this.onChanged();
+      });
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  onChanged(): void{
+    this.component_state = !this.component_state;
+    this.changeComponent.emit(this.component_state);
   }
 }
