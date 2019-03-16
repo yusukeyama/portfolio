@@ -4,7 +4,8 @@
     <a routerLink="/dashboard">Dashboard</a>
     <a routerLink="/contents">Contents</a>
   </nav> -->
-  <app-dashboard @changeTrigger></app-dashboard>
+  <app-dashboard></app-dashboard>
 </div>
-
-<router-outlet></router-outlet>
+<div [@changeContents]="onChangeCompoennt(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

@@ -12,7 +12,8 @@ export class TopComponent implements OnInit {
   ngOnInit() {
   }
 
-  title = 'COLORFUL PALETTE';
+  //title = 'COLORFUL PALETTE';
+  title = '';
   sub_title = 'YUSUKE.Y PORTFORIO';
 
 }

@@ -1,25 +1,19 @@
 import { Component } from '@angular/core';
-import { trigger, state, transition, style, animate } from '@angular/animations';
+import { RouterOutlet } from '@angular/router';
+import { change_animation } from './animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [
-    trigger('changeTrigger', [
-      state('close', style({ opacity: 0 })),
-      state('open', style({ opacity: 1 })),
-      transition('open <=> close', animate('0.5s ease-in-out'))
-    ])
-  ]
+  animations: [change_animation]
 })
 export class AppComponent {
-  title = 'COLORFULPALETTE';
-  sub_title = 'YUSUKE.Y PORTFORIO';
   
   component_staate: boolean;
 
-  onChangeCompoennt() {
-    this.component_staate = !this.component_staate;
+  onChangeCompoennt(outlet: RouterOutlet) {
+    //this.component_staate = !this.component_staate;
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }

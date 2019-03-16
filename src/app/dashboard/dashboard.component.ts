@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu } from '../menu';
 import { ContentsService } from '../contents.service';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,5 +20,16 @@ export class DashboardComponent implements OnInit {
   getMenus(): void {
     this.contentsService.getMenus()
       .subscribe(menus => this.menus = menus.slice(0, 6));
+  }
+
+  onClick(id: number): void {
+    console.log('kiteru');
+    for (let i = 0; i < 5; i++) {
+        document.getElementById('select' + i).classList.remove('click');
+    }
+    if (id != 6) {
+      let selectElement = document.getElementById('select' + id);
+      selectElement.classList.add('click');
+    }
   }
 }

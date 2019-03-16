@@ -43,7 +43,7 @@ export class ProfileComponent implements OnInit {
   }
 
   onChanged(): void{
-    this.component_state = !this.component_state;
-    this.changeComponent.emit(this.component_state);
+    // this.component_state = !this.component_state;
+    // this.changeComponent.emit(this.component_state);
   }
 }
