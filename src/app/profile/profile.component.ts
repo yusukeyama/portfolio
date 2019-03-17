@@ -4,11 +4,13 @@ import { MENUS } from '../mock-contents';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ContentsService } from '../contents.service';
+import { listAnimation } from '../animation';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
+  animations: [listAnimation]
 })
 export class ProfileComponent implements OnInit {
   @Output() changeComponent = new EventEmitter<boolean>();

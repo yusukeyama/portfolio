@@ -1,4 +1,4 @@
-import { trigger, query, transition, animate, style, group, animateChild } from '@angular/animations';
+import { trigger, query, transition, animate, style, group, animateChild, stagger } from '@angular/animations';
 
 export const change_animation = 
       trigger('changeContents', [
@@ -27,3 +27,22 @@ export const change_animation =
           query(':enter', animateChild()),
         ])
       ]);
+
+export const listAnimation = 
+    trigger('listAnimation', [
+        transition('* => *', [
+            query(':enter',
+            style({ opacity: 0 }), { optional: true }),
+            query(':leave', [
+            stagger(100, [
+                animate('0.3s ease-out', style({ opacity: 0, transform: 'translateY(30px)'}))
+            ])
+            ], { optional: true }),
+            query(':enter', [
+            style({ opacity: 0, transform: 'translateY(30px)' }),
+            stagger(100, [
+                animate('0.3s ease-out', style({ opacity: 1, transform: 'translateY(0)'}))
+            ])
+            ], { optional: true })
+        ])
+    ]);
