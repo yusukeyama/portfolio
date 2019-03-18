@@ -3,7 +3,7 @@ import { Observable, of, from } from 'rxjs';
 import { MessageService } from './message.service';
 
 import { Menu, Content } from './menu';
-import { MENUS, PROFILE, LANGUAGES, TOOLS, WORKS } from './mock-contents';
+import { MENUS, PROFILE, LANGUAGES, TOOLS, WORKS, CONTACTS } from './mock-contents';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +27,9 @@ export class ContentsService {
         break;
       case 3:
         return of (WORKS);
+        break;
+      case 4:
+        return of (CONTACTS);
         break;
     }
     //return of (MENUS.find(menu => menu.id === id));

@@ -33,3 +33,7 @@ export const WORKS: Content[] = [
     {id: 0, title: 'ポートフォリオページ', body:'このWebサイト。自分のスキルとか棚卸しするためと今まで学んだWeb技術で作りたくて作成。随時情報は追加予定。＊Workにはプライベートで関わったもののみ掲載していきます。', footer:''},
     {id: 1, title: 'シンプルメモ', body: 'Android個人リリース第1弾。とにかく軽く何かをリリースしたくて作成。そこそこインストール数伸びてて意外な収穫があった。', footer:''}
 ]
+
+export const CONTACTS: Content[] = [
+    {id: 0, title: 'Comming Soon...', body: '', footer: ''}
+]
