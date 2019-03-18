@@ -3,6 +3,7 @@
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 20px;
+    margin: 0 10px;
   }
   [class*='col-']:last-of-type {
     padding-right: 0;
@@ -26,10 +27,11 @@
     margin: 0;
   }
   .col-1-4 {
-    width: 16%;
+    width: 20%;
   }
   .center {
     text-align: center;
+    margin: auto;
   }
   .module {
     display: inline-block;
@@ -49,7 +51,7 @@
     padding: 10px 0;
   }
   .grid-pad > [class*='col-']:last-of-type {
-    padding-right: 10px;
+    padding: 0 10px;
   }
   @media (max-width: 600px) {
     .module {

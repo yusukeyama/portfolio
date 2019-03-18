@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
 
   onClick(id: number): void {
     console.log('kiteru');
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i < 5; i++) {
         document.getElementById('select' + i).classList.remove('click');
     }
     if (id != 6) {

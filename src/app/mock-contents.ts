@@ -2,7 +2,6 @@ import { Menu } from './menu';
 import { Content } from './menu';
 
 export const MENUS : Menu[] = [
-    {id: 0, name: 'PROFILE'},
     {id: 1, name: 'LANGUAGES'},
     {id: 2, name: 'TOOLS'},
     {id: 3, name: 'WORKS'},
